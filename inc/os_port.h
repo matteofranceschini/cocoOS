@@ -32,16 +32,16 @@
  * This file is part of the cocoOS operating system.
  * Author: Peter Eckstrand <info@cocoos.net>
  */
- 
+
 
 #ifndef OS_PORT_H_
 #define OS_PORT_H_
 
-//#include <interrupt.h>
+#include "../../mcc_generated_files/interrupt_manager.h"
 //#define os_enable_interrupts()  __enable_irq()
 //#define os_disable_interrupts() __disable_irq()
 
-#define os_enable_interrupts()
-#define os_disable_interrupts()
+#define os_enable_interrupts() INTERRUPT_GlobalEnable()
+#define os_disable_interrupts() INTERRUPT_GlobalDisable()
 
 #endif
